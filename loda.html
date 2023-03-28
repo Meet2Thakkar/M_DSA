@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+   
+   #p1
+    {
+        width: 100%;
+        border: 3px blue solid;
+        height: 50px
+    }
+    #p2
+    {
+        width: 10px;
+        height: 50px;
+        background-color: aqua;
+    }
+   
+</style>
+   
+<script>
+ var s;
+    var l=0;
+    function f1()
+    {
+     
+        s=setInterval("f3()",100);
+    }
+    function f2()
+    {
+        clearInterval(s);
+    }
+    function f3()
+    {
+       
+        l=l+10;
+        document.getElementById("p3").innerHTML=Math.round((l/1366)*100)+"%";
+       
+        document.getElementById("p2").style.width=l+"px";
+        if(l>1366)
+            {
+                clearInterval(s);
+            }
+       
+       
+    }
+
+
+    </script>
+</head>
+<body>
+
+
+    <div id="p1"> <div  id="p2"><p style="display: inline; z-index: 5;margin-left: 600" id="p3">j </p></div></div>
+    <button onclick="f1()">start</button>
+    <button onclick="f2()">stop</button>
+</body>
+
+
+</html>
